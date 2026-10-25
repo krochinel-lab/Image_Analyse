@@ -28,6 +28,15 @@ cv2.imshow("Ausgebebild",test_img)
 #.5 Image stands and waits for a touch from the keyboard
 cv2.waitKey(0)
 #.6 Tidy up all the pictures
-cv2.destroyAllWindow() 
+cv2.destroyAllWindows() 
+
+# %% Display the provided image using Matplotlib
+plt.imshow(test_img)
+plt.show()
+
+# %% Fix the issue you observed by using convert-color-function
+convert_test_img=cv2.cvtColor(test_img,cv2.COLOR_BGR2RGB)
+plt.imshow(convert_test_img)
+plt.show()
 
 # %%
