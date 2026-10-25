@@ -1,31 +1,33 @@
-# %%Die Bibiotheken importieren
+# %%Import the necessary libraries for image processing
 
-#.1 die numerische Standard-Bibiothek
+#.1 the numeric Standard-Library numpy
 import numpy as np
+
 #.2 Opencv
 import cv2
+
 #Matplotlib
 import matplotlib.pyplot as plt
 
-# %% Lade das Bild mit Opencv
-test_img = cv2.imread("C:/Users/DELL/Desktop/Bildanalysis/TestImage.png")
+# %% Load the provided test image using OpenCV
+test_img = cv2.imread("C:/Users/DELL/Desktop/Bildanalysis/Image_for_test.jpeg")
 if test_img is None :
     raise FileNotFoundError( "Bild Nicht gefunden")  
 
 
-#.1 Die Bildgröße finden
+#.1 Find the image size
 width = test_img.shape[1]
 heigth = test_img.shape[0]
 
-#.2 Ausgabebild anlegen (optional)
+#.2 create teh output image (optional)
 cv2.namedWindow("Ausgabebild",cv2.WINDOW_NORMAL)
-#.3 Skalierung des Fenster auf die Bildgröße
+#.3 Scaling the Window to the image size
 cv2.resizeWindow("Ausgabebild",width,heigth)
-#.4 Das Bild mit Opencv zeigen
+#.4 Displaz the image using OpenCV
 cv2.imshow("Ausgebebild",test_img)
-#.5 Stehende Zeit für Das Bild und Warte auf Tastatur
+#.5 Image stands and waits for a touch from the keyboard
 cv2.waitKey(0)
-#.6 Alle Bilder aufräumen
+#.6 Tidy up all the pictures
 cv2.destroyAllWindow() 
 
 # %%
